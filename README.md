@@ -23,33 +23,30 @@ class Task < ActiveRecord::Base
   respond to :html, :js, :json
 end
 
-##make some new folders inside the javascripts directory(its important for organization!):
+##make some new folders and a todo_list.js file(this file will include all our dependencies) inside the javascripts directory(this is important for organization!):
+
  ```shell
 app/assets/javascripts/directories
 app/assets/javascripts/factories
 app/assets/javascripts/services
 app/assets/javascripts/templates
-
-also make a new file(todo_list.js):
-
 app/assets/javascripts/todo_list.js
-
-this file will declare and include all of your dependencies!!
 
 ```
 
-##inside that file, start off like this:
+##inside the todo_list.js file, make it look like this:
+
+```shell
+
+angular.module('todo', [], function(){
 
 
-angular.module('todo', [
+  });
+
+```
 
 
-  ])
-
-
-
-
-##then go ahead to : https://angularjs.org/ and download it:
+##then go ahead to : https://angularjs.org/ and download the angularJS library:
 
 place it inside the vendors folder we create (we will put external libraries, like the one we just downloaded in here - external stuff go here - typically neve modify these files!)
 
@@ -59,34 +56,31 @@ place it inside the vendors folder we create (we will put external libraries, li
 ## so it should look like this:
 
 ```shell
-app/assets/javascrips/vendor/angular.min.js
+app/assets/javascrips/vendor/angular.js
 
-the angular.min.js file is the one we downloaded from the site
+the angular.js file is the one we downloaded from the site
 ```
 
 
 ##even though, we dont HAVE to, we will be explicitally requriing everythig inside the application.js file. So far, it should look like this:
 
+
+
+##great! now lets setup our routes
+
 ```shell
 
-// This is a manifest file that'll be compiled into application.js, which will include all the files
-// listed below.
-//
-// Any JavaScript/Coffee file within this directory, lib/assets/javascripts, vendor/assets/javascripts,
-// or any plugin's vendor/assets/javascripts directory can be referenced here using a relative path.
-//
-// It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
-// compiled file.
-//
-// Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
-// about supported directives.
-//
-//= require jquery
-//= require jquery_ujs
-//= require turbolinks
-//= require_tree .
-//=require_tree ./vendor
-//= todo_list.js 
+  root 'tasks#index'
+
+
+```
+
+##lastly, inside our views folder, create a tasks subfolder, and inside that subfolder, create an index.html.erb file. Inside that views/tasks/index.html.erb file, it should look like this:
+```shell
+
+<div ng-ap="todo">
+
+</div>
 
 ```
 
