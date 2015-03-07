@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//=require_tree ./vendor
 //= todo_list.js
