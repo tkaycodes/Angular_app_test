@@ -1,90 +1,79 @@
-#README
+#My first Angular App (Thanks to Chris):
+#below is a step by step walk-through of how we got started:
 
-# PROJECT WITH CHRIS ON REACT:
 
-## started with running command:
+###Start with running command:
 ```shell
 rails new angular -T -d postgresql
 ```
 
-##next generated a model and a controller:
+###Next, generate a model and a controller for "tasks" which is what our app will be about:
 
 ```shell
-
 rails g model Task
 rails g controller tasks
-
 ```
 
-##next inside the task.rb file add these lines so it looks like this:
+###Next, inside the task.rb file add the lines below so it looks like:
 ```shell
-
 class Task < ActiveRecord::Base
   respond to :html, :js, :json
 end
+```
 
-##make some new folders and a todo_list.js file(this file will include all our dependencies) inside the javascripts directory(this is important for organization!):
+###Now, make some new folders and a todo_list.js file(this file will include all of our dependencies) inside the javascripts directory(this is important for organization!) Your setup should look like this:
 
  ```shell
 app/assets/javascripts/directories
 app/assets/javascripts/factories
 app/assets/javascripts/services
 app/assets/javascripts/templates
+app/assets/javascripts/vendors
 app/assets/javascripts/todo_list.js
-
 ```
 
-##inside the todo_list.js file, make it look like this:
+###Inside the todo_list.js file we just created, make it look like this:
 
 ```shell
-
 angular.module('todo', [], function(){
-
-
   });
-
 ```
-
-
-##then go ahead to : https://angularjs.org/ and download the angularJS library:
-
-place it inside the vendors folder we create (we will put external libraries, like the one we just downloaded in here - external stuff go here - typically neve modify these files!)
-
+###Now, we can go ahead to : https://angularjs.org/ and download the angularJS library:
+(Place it inside the vendors folder we created above (In this folder, we will put external libraries, like the one we just downloaded - we typically never modify these files!)
 
 * ...
 
-## so it should look like this:
+##After downloading, your setup should look like this:
 
 ```shell
 app/assets/javascrips/vendor/angular.js
+(The angular.js file being the one we downloaded from the angular link above)
+```
 
-the angular.js file is the one we downloaded from the site
+###Even though we dont need to, we will be explicitally 'requiring' everything inside the application.js manifest file. It should look like this:
+
+```shell
+//= require jquery
+//= require jquery_ujs
+//= require turbolinks
+//= require_tree ./vendor
+//= require_tree .
+//= todo_list.js
 ```
 
 
-##even though, we dont HAVE to, we will be explicitally requriing everythig inside the application.js file. So far, it should look like this:
 
-
-
-##great! now lets setup our routes
+###Great! Now lets setup our routes as follows:!
 
 ```shell
-
   root 'tasks#index'
-
-
 ```
 
-##lastly, inside our views folder, create a tasks subfolder, and inside that subfolder, create an index.html.erb file. Inside that views/tasks/index.html.erb file, it should look like this:
+###Lastly, inside our views folder, create a tasks subfolder, and inside that subfolder, create an index.html.erb file. So, inside the views/tasks/index.html.erb file, it should look like this:
 ```shell
-
 <div ng-ap="todo">
-
 </div>
-
 ```
 
-#ANGULAR IS NOW SETUP AND READY TO GO!!
+#ANGULAR IS NOW SETUP AND READY TO GO!!:)
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
