@@ -1,5 +1,5 @@
 #My first Angular App (Thanks to Chris):
-#below is a step by step walk-through of how we got started:
+#Below is a step by step walk-through of how we got started:
 
 
 ###Start with running command:
