@@ -24,12 +24,12 @@ end
 Now, make some new folders and a todo_list.js file(this file will include all of our dependencies) inside the javascripts directory(this is important for organization!) Your setup should look like this:
 
  ```shell
-app/assets/javascripts/directories
-app/assets/javascripts/factories
-app/assets/javascripts/services
-app/assets/javascripts/templates
-app/assets/javascripts/vendors
-app/assets/javascripts/todo_list.js
+*app/assets/javascripts/directories
+*app/assets/javascripts/factories
+*app/assets/javascripts/services
+*app/assets/javascripts/templates
+*app/assets/javascripts/vendors
+*app/assets/javascripts/todo_list.js
 ```
 Inside the todo_list.js file we just created, make it look like this:
 ```shell
@@ -39,7 +39,6 @@ angular.module('todo', [], function(){
 Now, we can go ahead to : https://angularjs.org/ and download the angularJS library:
 (Place it inside the vendors folder we created above (In this folder, we will put external libraries, like the one we just downloaded - we typically never modify these files!)
 
-* ...
 
 After downloading, your setup should look like this:
 
