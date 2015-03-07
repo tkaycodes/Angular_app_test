@@ -84,5 +84,7 @@ the angular.js file is the one we downloaded from the site
 
 ```
 
+#ANGULAR IS NOW SETUP AND READY TO GO!!
+
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
