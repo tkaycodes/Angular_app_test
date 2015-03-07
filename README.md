@@ -7,6 +7,26 @@
 rails new angular -T -d postgresql
 ```
 
+##next generated a model and a controller:
+
+```shell
+
+rails g model Task
+rails g controller tasks
+
+```
+
+##next inside the task.rb file add these lines so it looks like this:
+```shell
+
+class Task < ActiveRecord::Base
+  respond to :html, :js, :json
+end
+
+
+```
+
+
 * ...
 
 
